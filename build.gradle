@@ -51,8 +51,8 @@ dependencies {
     implementation group: 'org.bgee.log4jdbc-log4j2', name: 'log4jdbc-log4j2-jdbc4.1', version: '1.16'
 
     //mybatis
-//    testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:2.3.1'
-//    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.3.1'
+    testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:2.3.1'
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.3.1'
 
 
     //add end

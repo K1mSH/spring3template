@@ -14,11 +14,14 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 public class RedisConfig {
 
 // 환경변수 주입
-    @Value("${spring.data.redis.port}")
-    private int port;
+//    @Value("${spring.data.redis.port}")
+//    private int port;
+//
+//    @Value("${spring.data.redis.host}")
+//    private String host;
 
-    @Value("${spring.data.redis.host}")
-    private String host;
+    private int port = 6379;
+    private String host = "127.0.0.1";
 
     @Bean
     public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory) {

@@ -3,6 +3,7 @@ package boot.mytemp.controller;
 import boot.mytemp.redis.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.CacheManager;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.http.HttpStatus;
@@ -13,7 +14,10 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 @Slf4j
 public class UserController {
-
+/*
+*   redis로 유저 정보를 주고 받을 수 있음
+*
+* */
     @Autowired
     private RedisTemplate<String, String> redisTemplate;
 
@@ -21,6 +25,7 @@ public class UserController {
     @PostMapping("/redis/post")
     public ResponseEntity<?> addUser(@RequestBody User user) {
         ValueOperations<String, String> vop = redisTemplate.opsForValue();
+
 
         String id = user.getId();
         String name = user.getName();

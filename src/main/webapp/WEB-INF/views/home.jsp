@@ -4,11 +4,16 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Insert title here</title>
+    <title>home</title>
     <style>
     </style>
 </head>
 <body>
-    home
+    login
+    <form>
+        id : <input type="text" id="userId">
+        pass : <input type="text" id="userPass">
+        <button type="submit">login</button>
+    </form>
 </body>
 </html>
