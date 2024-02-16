@@ -1,1 +1,1 @@
-# redis 기본 template
+redis 기본 template
