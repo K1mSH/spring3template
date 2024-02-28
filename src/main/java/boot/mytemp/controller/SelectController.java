@@ -20,7 +20,9 @@ public class SelectController {
     @GetMapping("/select")
     public String selectView(){
 
-        List<Map> resultList = selectService.selectSeoul();
+        //List<Map> resultList = selectService.selectSeoul();
+        List<Map> resultList = selectService.selectJoinTest();
+
         return "views/select";
     }
 

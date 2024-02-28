@@ -12,7 +12,12 @@ public class SelectServiceImpl implements SelectService{
 
     @Autowired
     SelectMapper selectMapper;
-    
+
+    @Override
+    public List<Map> selectJoinTest() {
+        return selectMapper.selectJoinTest();
+    }
+
     /*
     *   seoul 전체 출력
     * */

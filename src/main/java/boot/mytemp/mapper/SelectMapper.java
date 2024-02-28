@@ -8,4 +8,5 @@ import java.util.Map;
 @Mapper
 public interface SelectMapper {
     public List<Map> selectSeoul();
+    public List<Map> selectJoinTest();
 }

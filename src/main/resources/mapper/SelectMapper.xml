@@ -4,4 +4,11 @@
     <select id="selectSeoul" resultType="java.util.Map">
         select * from seoul
     </select>
+    <select id="selectJoinTest" resultType="java.util.Map">
+        select g.large_name , g.legal_name, g.shop_name from gyunggi g
+                                                                 left join seoul s
+                                                                           on g.middle_name = s.middle_name
+        where g.floor_info ='1' and g.large_name ='수리·개인' and g.small_name ='셀프 빨래방'
+        group by g.large_name, g.legal_name, g.shop_name
+    </select>
 </mapper>
