@@ -14,10 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 @Slf4j
 public class UserController {
-/*
-*   redis로 유저 정보를 주고 받을 수 있음
-*
-* */
+
     @Autowired
     private RedisTemplate<String, String> redisTemplate;
 
@@ -26,13 +23,13 @@ public class UserController {
     public ResponseEntity<?> addUser(@RequestBody User user) {
         ValueOperations<String, String> vop = redisTemplate.opsForValue();
 
-
         String id = user.getId();
         String name = user.getName();
         int age = user.getAge();
         String major = user.getMajor();
 
         vop.set(id,name+","+age+","+major);
+
 
         log.info("[insert info] key : "+ id + "{"+name+", "+age+", "+major+"}");
         return new ResponseEntity<>(HttpStatus.CREATED);    }

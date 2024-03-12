@@ -10,5 +10,6 @@
                                                                            on g.middle_name = s.middle_name
         where g.floor_info ='1' and g.large_name ='수리·개인' and g.small_name ='셀프 빨래방'
         group by g.large_name, g.legal_name, g.shop_name
+        order by legal_name desc
     </select>
 </mapper>

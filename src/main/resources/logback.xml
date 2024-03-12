@@ -1,0 +1,30 @@
+<configuration>
+    <appender name="sql-log" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!--<pattern>%d{yyyyMMdd HH:mm:ss.SSS} [%thread] %-3level %logger{5} - %msg %n</pattern>-->
+            <pattern>%d %5p [%c] %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="jdbc" level="OFF"/>
+
+    <logger name="jdbc.resultsettable" level="off" additivity="false"/>
+    <logger name="jdbc.sqltiming" level="off" additivity="false"/>
+
+    <logger name="jdbc.sqlonly" level="OFF" appender-ref="sql-log" additivity="false"/>
+    <logger name="jdbc.audit" level="OFF" appender-ref="sql-log" additivity="false"/>
+    <logger name="jdbc.resultset" level="OFF" appender-ref="sql-log" additivity="false"/>
+
+    <logger name="jdbc.connection" level="OFF"/>
+
+    <logger name="com.zaxxer.hikari.HikariConfig" level="off" appender-ref="sql-log" additivity="false"/>
+    <logger name="_org.springframework.web.servlet.HandlerMapping.Mappings" level="off" appender-ref="sql-log" additivity="false"/>
+    <logger name="jdbc.audit" level="off" additivity="false"/>
+    <logger name="org.springframework.web.servlet.DispatcherServlet" level="off" additivity="false"/>
+    <logger name="boot.mytemp.mapper" level="off" additivity="false"/>
+    <logger name="org.apache.catalina.core.ContainerBase" level="off" additivity="false"/>
+
+    <root level="debug">
+        <appender-ref ref="sql-log" />
+    </root>
+</configuration>
