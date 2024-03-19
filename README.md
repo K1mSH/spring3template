@@ -1,1 +1,1 @@
-redis 기본 template
+redis vs RDBMS traffic 비교
